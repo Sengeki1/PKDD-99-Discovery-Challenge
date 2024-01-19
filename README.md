@@ -20,3 +20,5 @@ to deal with imbalanced datasets
 
 `pip install matplotlib`
 to create graphs and data visualizations
+
+To export the basetable please run the script `table_merged.py` before running the script `model.py`
