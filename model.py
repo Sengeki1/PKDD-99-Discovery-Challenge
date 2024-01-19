@@ -33,8 +33,16 @@ _, x_train, y_train = get_xy(train, 'balance_after_trans', x_labels=['client_id'
 _, x_train, y_train = get_xy(val, 'balance_after_trans', x_labels=['client_id'])
 _, x_train, y_train = get_xy(test, 'balance_after_trans', x_labels=['client_id'])
 
-regressor = LinearRegression()
-regressor.fit(x_train, y_train)
+model = LinearRegression()
+model.fit(x_train, y_train)
 
-print(regressor.score(x_train, y_train))
+score = model.score(x_train, y_train)
+print(f"coefficient of determination: {score}")
+
+print(f"intercept: {model.intercept_}")
+
+print(f"slope: {model.coef_}")
+
+y_pred = model.predict(x_train)
+print(f"predicted response:\n{y_pred}")
 
